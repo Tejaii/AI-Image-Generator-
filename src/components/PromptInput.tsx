@@ -1,11 +1,13 @@
-import React from 'react';
-import { Sparkles } from 'lucide-react';
+'use client'
+
+import React from 'react'
+import { Sparkles } from 'lucide-react'
 
 interface PromptInputProps {
-  prompt: string;
-  onPromptChange: (prompt: string) => void;
-  onGenerate: () => void;
-  isGenerating: boolean;
+  prompt: string
+  onPromptChange: (prompt: string) => void
+  onGenerate: () => void
+  isGenerating: boolean
 }
 
 const SUGGESTION_CHIPS = [
@@ -15,7 +17,7 @@ const SUGGESTION_CHIPS = [
   'Cyberpunk rebel',
   'Superhero portrait',
   'Space explorer'
-];
+]
 
 const PromptInput: React.FC<PromptInputProps> = ({ 
   prompt, 
@@ -24,9 +26,9 @@ const PromptInput: React.FC<PromptInputProps> = ({
   isGenerating
 }) => {
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    onGenerate();
-  };
+    e.preventDefault()
+    onGenerate()
+  }
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-lg backdrop-blur-sm bg-opacity-80 dark:bg-opacity-80">
@@ -85,7 +87,7 @@ const PromptInput: React.FC<PromptInputProps> = ({
         </button>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default PromptInput;
+export default PromptInput

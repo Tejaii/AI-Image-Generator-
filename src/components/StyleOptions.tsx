@@ -1,9 +1,11 @@
-import React from 'react';
-import { AvatarStyle } from './AvatarGenerator';
+'use client'
+
+import React from 'react'
+import { AvatarStyle } from './AvatarGenerator'
 
 interface StyleOptionsProps {
-  selectedStyle: AvatarStyle;
-  onStyleChange: (style: AvatarStyle) => void;
+  selectedStyle: AvatarStyle
+  onStyleChange: (style: AvatarStyle) => void
 }
 
 const styles: { id: AvatarStyle; name: string; description: string }[] = [
@@ -32,7 +34,7 @@ const styles: { id: AvatarStyle; name: string; description: string }[] = [
     name: 'Watercolor',
     description: 'Soft, artistic style with watercolor effects',
   },
-];
+]
 
 const StyleOptions: React.FC<StyleOptionsProps> = ({ selectedStyle, onStyleChange }) => {
   return (
@@ -63,7 +65,7 @@ const StyleOptions: React.FC<StyleOptionsProps> = ({ selectedStyle, onStyleChang
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default StyleOptions;
+export default StyleOptions

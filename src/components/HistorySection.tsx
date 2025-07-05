@@ -1,10 +1,12 @@
-import React from 'react';
-import { Clock, Trash2 } from 'lucide-react';
-import { AvatarData } from './AvatarGenerator';
+'use client'
+
+import React from 'react'
+import { Clock, Trash2 } from 'lucide-react'
+import { AvatarData } from './AvatarGenerator'
 
 interface HistorySectionProps {
-  history: AvatarData[];
-  onHistoryItemClick: (avatar: AvatarData) => void;
+  history: AvatarData[]
+  onHistoryItemClick: (avatar: AvatarData) => void
 }
 
 const HistorySection: React.FC<HistorySectionProps> = ({ 
@@ -15,8 +17,8 @@ const HistorySection: React.FC<HistorySectionProps> = ({
     return new Date(date).toLocaleTimeString([], { 
       hour: '2-digit', 
       minute: '2-digit' 
-    });
-  };
+    })
+  }
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-lg backdrop-blur-sm bg-opacity-80 dark:bg-opacity-80">
@@ -48,7 +50,7 @@ const HistorySection: React.FC<HistorySectionProps> = ({
                   <button 
                     className="p-1.5 rounded-full bg-white/20 text-white hover:bg-red-500/80 transition-colors duration-200"
                     onClick={(e) => {
-                      e.stopPropagation();
+                      e.stopPropagation()
                       // Delete functionality would go here
                     }}
                   >
@@ -72,7 +74,7 @@ const HistorySection: React.FC<HistorySectionProps> = ({
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default HistorySection;
+export default HistorySection

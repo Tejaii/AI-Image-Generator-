@@ -1,28 +1,30 @@
-import React from 'react';
-import { Download, Share2, RotateCw } from 'lucide-react';
-import { AvatarData } from './AvatarGenerator';
+'use client'
+
+import React from 'react'
+import { Download, Share2, RotateCw } from 'lucide-react'
+import { AvatarData } from './AvatarGenerator'
 
 interface PreviewSectionProps {
-  avatar: AvatarData | null;
-  isGenerating: boolean;
+  avatar: AvatarData | null
+  isGenerating: boolean
 }
 
 const PreviewSection: React.FC<PreviewSectionProps> = ({ avatar, isGenerating }) => {
   const handleDownload = () => {
     // In a real app, this would download the actual image
-    window.open(avatar?.imageUrl, '_blank');
-  };
+    window.open(avatar?.imageUrl, '_blank')
+  }
 
   const handleShare = () => {
     // In a real app, this would open a share dialog
-    navigator.clipboard.writeText(avatar?.imageUrl || '');
-    alert('Image URL copied to clipboard!');
-  };
+    navigator.clipboard.writeText(avatar?.imageUrl || '')
+    alert('Image URL copied to clipboard!')
+  }
 
   const handleRegenerate = () => {
     // In a real app, this would trigger a new generation with the same prompt
-    console.log('Regenerate with prompt:', avatar?.prompt);
-  };
+    console.log('Regenerate with prompt:', avatar?.prompt)
+  }
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-lg backdrop-blur-sm bg-opacity-80 dark:bg-opacity-80 h-full flex flex-col">
@@ -101,7 +103,7 @@ const PreviewSection: React.FC<PreviewSectionProps> = ({ avatar, isGenerating })
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PreviewSection;
+export default PreviewSection
